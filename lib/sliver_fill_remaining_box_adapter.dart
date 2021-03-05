@@ -13,7 +13,8 @@ class SliverFillRemainingBoxAdapter extends SingleChildRenderObjectWidget {
 
   @override
   RenderSliverFillRemainingBoxAdapter createRenderObject(BuildContext context) {
-    var scrollable = context.ancestorStateOfType(TypeMatcher<ScrollableState>()) as ScrollableState;
+    var scrollable =context.findAncestorStateOfType<ScrollableState>();
+    // var scrollable = context.ancestorStateOfType(TypeMatcher<ScrollableState>()) as ScrollableState;
     return RenderSliverFillRemainingBoxAdapter(scrollable.widget.controller);
   }
 }
